@@ -18,13 +18,13 @@ public class TaskStoraging {
         this.manager=manager;
     }
     //Запись в файл формата json
-//    Gson gson= new GsonBuilder()
-//            .setPrettyPrinting() //Красивый вывод в файле
-//            .registerTypeAdapter(LocalDate.class,
-//                    (JsonDeserializer<LocalDate>)(json, type, ctx)->LocalDate.parse(json.getAsString())) //Создаем десериализатор для типа данных LocalDate который парсит строки из файла в формат Localdate
-//            .registerTypeAdapter(LocalDate.class,
-//                    (JsonSerializer<LocalDate>) (date, type, ctx) -> new JsonPrimitive(date.toString())) //сериализатор который перевеодит формат LocalDate в понятный для Json String
-//            .create();
+    Gson gson= new GsonBuilder()
+            .setPrettyPrinting() //Красивый вывод в файле
+            .registerTypeAdapter(LocalDate.class,
+                    (JsonDeserializer<LocalDate>)(json, type, ctx)->LocalDate.parse(json.getAsString())) //Создаем десериализатор для типа данных LocalDate который парсит строки из файла в формат Localdate
+            .registerTypeAdapter(LocalDate.class,
+                    (JsonSerializer<LocalDate>) (date, type, ctx) -> new JsonPrimitive(date.toString())) //сериализатор который перевеодит формат LocalDate в понятный для Json String
+            .create();
 
     public void saveToFile(String path) {
         try ( Writer writer = new FileWriter(path)){
