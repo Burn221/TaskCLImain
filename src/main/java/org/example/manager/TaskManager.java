@@ -43,13 +43,11 @@ public class TaskManager{
         return tasks;
     }
 
-
     public void addTask(Task task){
+       tasks.put(nextId,task);
+       generateId();
 
-        tasks.put(nextId,task);
-        generateId();
-
-    }
+  }
 
     public void deleteTask(int id){
         tasks.remove(id);
