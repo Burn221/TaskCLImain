@@ -23,5 +23,7 @@ public class Main {
         System.out.println("Программа завершила свою работу!");
         storager.saveToFile(path);
 
+        //тестовые комментарии для гита
+
     }
 }
